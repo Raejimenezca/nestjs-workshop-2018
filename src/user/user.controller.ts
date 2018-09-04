@@ -46,9 +46,9 @@ export class UserController {
     }
 
     @Post('login')
-    @ApiResponse({status: HttpStatus.CREATED, type: UserVm})
+    @ApiResponse({status: HttpStatus.CREATED, type: LoginResponseVm})
     @ApiResponse({status: HttpStatus.BAD_REQUEST, type: ApiException})
-    @ApiOperation(GetOperationId(User.modelName, 'login'))
+    @ApiOperation(GetOperationId(User.modelName, 'Login'))
     async login(@Body() loginVm: LoginVm): Promise<LoginResponseVm> {
         const fields = Object.keys(loginVm);
         fields.forEach(field => {

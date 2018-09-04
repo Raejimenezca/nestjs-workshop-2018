@@ -4,12 +4,13 @@ import { prop, ModelType } from "typegoose";
 
 export class User extends BaseModel<User> {
     @prop({required: [true, 'Username is required'], 
-    minlength: [6, 'Mus be at least 6 characters'], 
-    unique: true,})
+    minlength: [6, 'Must be at least 6 characters'], 
+    unique: true,
+    })
     username: string;
 
     @prop({required: [true, 'Password is required'], 
-    minlength: [6, 'Mus be at least 6 characters'], 
+    minlength: [6, 'Must be at least 6 characters'], 
     })
     password: string;
 
