@@ -19,5 +19,8 @@ export class MapperService {
         Config.createMap('User', 'UserVm')
         .forSourceMember('_id', opts => opts.ignore())
         .forSourceMember('password', opts => opts.ignore())
+
+        Config.createMap('Todo', 'TodoVm').forSourceMember('_id', opts => opts.ignore());
+        Config.createMap('Todo[]', 'TodoVm[]').forSourceMember('_id', opts => opts.ignore());
     } 
 }

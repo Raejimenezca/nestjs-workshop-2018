@@ -12,7 +12,7 @@ export abstract class BaseService<T extends Typegoose> {
     }
 
     private get viewModelName(): string {
-        return '${this._model.modelName}Vm';
+        return `${this._model.modelName}Vm`;
     }
 
     async map<K>(object: Partial<InstanceType<T>> | Partial<InstanceType<T>>[], isArray: boolean = false, sourceKey ?: string, destinationKey ?: string): Promise<K> {

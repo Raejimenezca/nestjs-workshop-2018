@@ -2,7 +2,7 @@ import { BaseModel, schemaOptions } from "shared/base.model";
 import { UserRole } from "./user-role.enum";
 import { prop, ModelType } from "typegoose";
 
-export class User extends BaseModel {
+export class User extends BaseModel<User> {
     @prop({required: [true, 'Username is required'], 
     minlength: [6, 'Mus be at least 6 characters'], 
     unique: true,})
