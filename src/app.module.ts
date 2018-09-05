@@ -9,9 +9,10 @@ import { UserController } from './user/user.controller';
 import { UserService } from './user/user.service';
 import { UserModule } from './user/user.module';
 import { TodoModule } from './todo/todo.module';
+import { NoteModule } from 'note/note.module';
 
 @Module({
-  imports: [SharedModule, MongooseModule.forRoot(ConfigurationService.connectionString), UserModule, TodoModule],
+  imports: [SharedModule, MongooseModule.forRoot(ConfigurationService.connectionString), UserModule, TodoModule, NoteModule],
   controllers: [AppController, UserController],
   providers: [AppService, UserService],
 })
