@@ -13,9 +13,11 @@ describe('AppController', () => {
   });
 
   describe('root', () => {
-    it('should return "Hello World!"', () => {
+    it("should return { message: I'm ok }", () => {
       const appController = app.get<AppController>(AppController);
-      expect(appController.root()).toBe('Hello World!');
+      let msg: any;
+      msg =  { message: "I'm ok" };
+      expect(appController.root()).toEqual(msg);
     });
   });
 });
