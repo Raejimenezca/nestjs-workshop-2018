@@ -8,11 +8,11 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { UserController } from './user/user.controller';
 import { UserService } from './user/user.service';
 import { UserModule } from './user/user.module';
-import { TodoModule } from './todo/todo.module';
+import { UsersModule } from './users/users.module';
 import { NoteModule } from 'note/note.module';
 
 @Module({
-  imports: [SharedModule, MongooseModule.forRoot(ConfigurationService.connectionString), UserModule, TodoModule, NoteModule],
+  imports: [SharedModule, MongooseModule.forRoot(ConfigurationService.connectionString), UserModule, UsersModule, NoteModule],
   controllers: [AppController, UserController],
   providers: [AppService, UserService],
 })
