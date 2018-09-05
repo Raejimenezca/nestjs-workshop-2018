@@ -7,4 +7,7 @@ export class NoteVm extends BaseModelVm {
     @ApiModelProperty() content: string;
     @ApiModelProperty({enum: EnumToArray(NoteLevel) }) level: NoteLevel;
     @ApiModelProperty() isCompleted: boolean;
+    @ApiModelProperty() text: string;
+    @ApiModelProperty() createdDate: Date;
+    @ApiModelProperty() updatedDate: Date;
 }

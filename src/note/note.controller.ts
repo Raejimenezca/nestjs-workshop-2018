@@ -18,10 +18,19 @@ export class NoteController {
     @ApiResponse({status: HttpStatus.BAD_REQUEST, type: ApiException})
     @ApiOperation(GetOperationId(Note.modelName, 'Create'))
     async create(@Body() params: NoteParams): Promise<NoteVm> {
-        const { content } = params;
+        const { content, text, createdDate, updatedDate } = params;
 
         if (!content){
             throw new HttpException('Content is required', HttpStatus.BAD_REQUEST);
+        }
+        else if(!text){
+            throw new HttpException('Text is required', HttpStatus.BAD_REQUEST);
+        }
+        else if(!createdDate){
+            throw new HttpException('Created date is required', HttpStatus.BAD_REQUEST);
+        }
+        else if(!updatedDate){
+            throw new HttpException('Updated date is required', HttpStatus.BAD_REQUEST);
         }
 
         try {
@@ -50,7 +59,7 @@ export class NoteController {
     @ApiResponse({status: HttpStatus.BAD_REQUEST, type: ApiException})
     @ApiOperation(GetOperationId(Note.modelName, 'Update'))
     async update(@Body() vm: NoteVm): Promise<NoteVm> {
-        const { id, content, level, isCompleted } = vm;
+        const { id, content, level, isCompleted, text, createdDate, updatedDate } = vm;
 
         if(!vm || !id) {
             throw new HttpException('Missing parameters', HttpStatus.BAD_REQUEST);
@@ -69,6 +78,9 @@ export class NoteController {
         exist.content = content;
         exist.isCompleted = isCompleted;
         exist.level = level;
+        exist.text = text;
+        exist.createdDate = createdDate;
+        exist.updatedDate = updatedDate;
 
         try{
             const updated = await this._noteService.update(id, exist);

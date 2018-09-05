@@ -16,11 +16,14 @@ export class NoteService extends BaseService<Note> {
     }
 
     async createNote(params: NoteParams): Promise<Note> {
-        const {content, level} = params;
+        const {content, level, text, createdDate, updatedDate} = params;
         
         const newNote = new this._model();
 
         newNote.content = content;
+        newNote.text = text;
+        newNote.createdDate = createdDate;
+        newNote.updatedDate = updatedDate;
 
         if(level) {
             newNote.level = level;
