@@ -1,9 +1,9 @@
 import { Injectable, Controller, HttpException, HttpStatus } from '@nestjs/common';
-import { BaseService } from 'shared/base.service';
+import { BaseService } from '../shared/base.service';
 import { InjectModel } from '@nestjs/mongoose';
 import { Note } from './models/note.model';
 import { ModelType } from 'typegoose';
-import { MapperService } from 'shared/mapper/mapper.service';
+import { MapperService } from '../shared/mapper/mapper.service';
 import { NoteParams } from './models/view-models/note-param.model';
 import { identity } from 'rxjs';
 
