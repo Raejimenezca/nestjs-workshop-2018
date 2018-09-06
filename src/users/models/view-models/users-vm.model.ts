@@ -1,4 +1,4 @@
-import { BaseModelVm } from "shared/base.model";
+import { BaseModelVm } from "../../../shared/base.model";
 import { ApiModelProperty, ApiModelPropertyOptional } from "@nestjs/swagger";
 
 

@@ -1,5 +1,5 @@
 import { Injectable, HttpException, HttpStatus, Inject, forwardRef } from '@nestjs/common';
-import { BaseService } from 'shared/base.service';
+import { BaseService } from '../shared/base.service';
 import { User } from './models/user.model';
 import { InjectModel } from '@nestjs/mongoose';
 import { ModelType } from 'typegoose';
